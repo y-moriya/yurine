@@ -10,7 +10,6 @@ client.on('messageDelete', ctx => {
 
   const content = ctx.content
 
-  // こうしないとボットのメッセージを消すと一生タグが増える、やればわかる
   if (ctx.author?.bot) {
     ctx.channel.send(`${content}`)
     return
@@ -26,7 +25,6 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 
   const content = oldMessage.content
 
-  // こうしないとボットのメッセージを消すと一生タグが増える、やればわかる
   if (oldMessage.author?.bot) {
     oldMessage.channel.send(`${content}`)
     return
